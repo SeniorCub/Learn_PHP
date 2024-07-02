@@ -74,4 +74,7 @@
      echo($break);
      print_r($profile["department"]);
      echo($break);
+
+     // Assignment
+     // Create an array tell us about someone you don't know
 ?>
