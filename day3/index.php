@@ -46,7 +46,7 @@
      echo("<br>");
      echo(strtolower($string));
      echo("<br>");
-     echo(ucfirst($string));
+     echo(strrev($string));
      echo("<br>");
      // read about array
 ?>
