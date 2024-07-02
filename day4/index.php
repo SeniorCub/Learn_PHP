@@ -76,5 +76,5 @@
      echo($break);
 
      // Assignment
-     // Create an array tell us about someone you don't know
+     // Create an array tell us about someone using associative array
 ?>
