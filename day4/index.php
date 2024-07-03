@@ -77,4 +77,12 @@
 
      // Assignment
      // Create an array tell us about someone using associative array
+     $cub = array(
+          "Name" => "Reuben",
+          "Nikname" => "SeniorCub",
+          "Level" => 300,
+          "Department" => "Computer Science",
+          "MatricNo" => 2021000037,
+          "PhoneNo" => 08134407001
+     )
 ?>
