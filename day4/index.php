@@ -77,12 +77,15 @@
 
      // Assignment
      // Create an array tell us about someone using associative array
-     $cub = array(
+     $myself = array(
           "Name" => "Reuben",
           "Nikname" => "SeniorCub",
           "Level" => 300,
           "Department" => "Computer Science",
           "MatricNo" => 2021000037,
-          "PhoneNo" => 08134407001
-     )
+          "Gender" => "Male"
+     );
+     var_dump($myself);
+     echo($break);
+     print_r($myself["Name"]);
 ?>
