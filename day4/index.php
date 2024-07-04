@@ -88,4 +88,6 @@
      var_dump($myself);
      echo($break);
      print_r($myself["Name"]);
+     echo($break);
+     echo("My name is ".$myself["Name"].". "."Some people call me Dev ".$myself["Nikname"])
 ?>
