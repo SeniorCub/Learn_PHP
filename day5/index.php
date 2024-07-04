@@ -101,7 +101,9 @@
 
      // Find out operation we can perform on array and string
 
+
      // Operations on Array
+     echo($break);
      echo("OPerations On Array");
      echo($break);
      $array = array(1, 2, 3);
@@ -112,24 +114,44 @@
      echo($break);
      echo($array[] = 5);
      echo($break);
-     echo($array = array_merge($array, [6 ,7]));
-     echo($break);
-     var_dump($array);
+     var_dump($array = array_merge($array, [6 ,7]));
      echo($break);
 
 
      // // Removing Elements
+     echo($break);
      echo("Removing Elements");
      echo($break);
      echo(array_pop($array));
      echo($break);
-     echo(array_shift($array));
+     var_dump(array_shift($array));
      echo($break);
-     // echo($array = array_splice($array, 0, 2));
+     var_dump($array = array_splice($array, 0, 2));
      echo($break);
-     var_dump($array);
 
-     // Iterating, Searching, Sorting, Filtering & Mapping, Spliting & Combining
+     // Iterating, Searching, Sorting, Filtering & Mapping, Spliting & Combining, Union
+     // Union
+     echo($break);
+     echo("Union");
+     echo($break);
+     $array1 = array(1, 2, 3);
+     $array2 = array(4, 5, 6);
+     $array3 = $array1 + $array2;
+     print_r($array3);
+     echo($break);
+
+     //  Equality
+     echo($break);
+     echo("Equality");
+     echo($break);
+     $array1 = array(1, 2, 3);
+     $array2 = array(1, 2, 3);
+     $array3 = array(1, 2, 3, 4);
+     $array4 = array(1, 2, 3, 4, 5);
+     echo($array1 == $array2);
+     echo($break);
+     var_dump($array4 == $array3);
+     echo($break);
      
 
      // String OPerations
