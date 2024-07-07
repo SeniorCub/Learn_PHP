@@ -64,10 +64,59 @@
      $fruit = array("Orange","Banana", "Tomatoes", "Mango", "Grape", "Avocado", "Apple");
      foreach ($fruit as $value) {
           echo $value . $break;
-     }
-
+     };
+     echo($break);
+     echo($break);
+     echo($break);
 
      // Assignment
+     echo "<h1>Assignment</h1>";
      // Read about nested if statement and use it to wrie a program
+     echo "<h3>Write a program using nested if statement</h3>";
+     $age = 20;
+     $gender = "F";
+
+     if ($age < 18) {
+          if ($gender == "M") {
+               echo "You are a Male Child";
+               echo $break;
+          } else {
+               echo "You are a Female Child";
+               echo $break;
+          }
+     } elseif ($age <= 30) {
+          if ($age <= 19) {
+               echo "You are a Teenager";
+               echo $break;
+          } else {
+               echo "You are a Youth";
+               echo $break;
+          }
+     } elseif ($age <= 50) {
+          echo "You are an Adult";
+          echo $break;
+     } else {
+          echo "You are an Old";
+          echo $break;
+     };
+     echo $break;
+     echo $break;
+     
      // For each loop with associative array
+     echo "<h3>For each loop with associative array</h3>";
+     $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+     foreach ($age as $x => $val) {
+          echo "$x = $val" . $break;
+     }
+     echo $break;
+     echo $break;
+     $student_grades = [
+          "Alice" => "A",
+          "Bob" => "B",
+          "Charlie" => "C",
+          "Diana" => "A",
+     ];
+     foreach ($student_grades as $student => $grade) {
+          echo "$student got a $grade" . $break;
+     }
 ?>
