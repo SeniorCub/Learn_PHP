@@ -91,7 +91,36 @@
           return($sum);
      };
      echo(sumAll(2 , 3, 1, 6, 9));
+     echo $break;
+     echo $break;
 
      // Check if a number is even or odd
+     echo("<h4>Check if a number is even or odd</h4>");
+     function checker($num1){
+          if ($num1 % 2 == 0){
+               return($num1 . " is an even number");
+          } else {
+               return($num1 . " is an odd number");
+          }
+     }
+     echo(checker(5));
+     echo $break;
+     echo(checker(8));
+     echo $break;
+     echo $break;
+
      // calculate the sum of numbers from 1 to 10
+     echo("<h4>Calculate the sum of numbers from 1 to 10</h4>");
+     function total($start, $stop){
+          $sum = 0;
+          for ($i = $start; $i <= $stop; $i++){
+               echo $i;
+               echo $break;
+               $sum += $i;
+          }
+          return($sum);
+     }
+     echo(total(1, 10));
+     echo $break;
+     echo $break;
 ?>
