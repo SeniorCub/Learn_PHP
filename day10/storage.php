@@ -24,4 +24,8 @@
                echo "$key: $value <br>";
           }
      }
+
+     // $john = "Tao";
+     // echo "i am $john";
+     // echo 'i am $john'
 ?>
