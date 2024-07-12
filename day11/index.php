@@ -37,14 +37,17 @@
 </head>
 <body>
 <?php
-     $condition = isset($_GET["msg"]) ? $_GET["msg"] : null;
+     $emalCondi = isset($_GET["msg"]) ? $_GET["msg"] : null;
+     $passCondi = isset($_GET["msgpas"]) ? $_GET["msgpas"] : null;
      // echo $condition;
      echo("<p style='color: red; font-size: 20px;'>$condition</p>")
 ?>
      <form action="storage.php" method="POST">
           <div>Login</div>
           <input type="email" name="email" id="">
+          <?php  echo("<p style='color: red; font-size: 20px; padding: 0px; margin: 0px;'>$emalCondi</p>") ?>
           <input type="password" name="password" id="">
+          <?php  echo("<p style='color: red; font-size: 20px; padding: 0px; margin: 0px;'>$passCondi</p>") ?>
           <button type="submit" class="btn">Submit</button>
      </form>
 
