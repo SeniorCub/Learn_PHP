@@ -15,10 +15,14 @@
                // Echo error if input is empty
                echo("All fields are required");
           } else {
-               // save data into the database
-               $insert = mysqli_query($conn, "INSERT INTO `Customer Details`(`fname`, `lname`, `uname`, `email`, `password`, `cpassword`) VALUES ('$fname','$lname','$uname','$email','$password','$cpassword')");
-               // Echo success messgae
-               echo('User created Sucessfuly');
+               if ( $password !=  $cpassword){
+                    echo("Password does not match");
+               } else{
+                    // save data into the database
+                    $insert = mysqli_query($conn, "INSERT INTO `Customer Details`(`fname`, `lname`, `uname`, `email`, `password`, `cpassword`) VALUES ('$fname','$lname','$uname','$email','$password','$cpassword')");
+                    // Echo success messgae
+                    echo('User created Sucessfuly');
+               }
           }
      }
 ?>
