@@ -11,12 +11,16 @@
                box-shadow: 5px 5px 10px #eee, -5px -5px 10px #eee;
                display: flex;
                flex-direction: column;
-               gap: 2rem;
+               gap: 2rem; 
                margin: 0 auto;
                width: 40%;
                padding-bottom: 10px;
                input{
                     height: 30px;
+               }
+               input::placeholder{
+                    color: #333;
+                    font-size: 15px;
                }
                .btn{
                     background: black;
