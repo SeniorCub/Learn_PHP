@@ -79,7 +79,7 @@
 <body>
      
      <form action="" method="POST">
-          <div>Register</div>
+          <div>Personal Details</div>
           <input type="text" name="fname" id="" placeholder="First Name">
           <?php echo("<p style='color: red; font-size: 20px; padding: 0px; margin: 0px; text-align:center; '>$cond1</p>"); ?>
           <input type="text" name="lname" id="" placeholder="Last Name">
