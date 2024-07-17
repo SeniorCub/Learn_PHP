@@ -1,6 +1,8 @@
 <?php
     // Linking connect.php
-    include "connect.php";
+         include "connect.php";
+     // $conn = mysqli_connect("localhost","root", "","FirstWork");
+
 
 
     // To check if the submit button is clicked
@@ -25,7 +27,7 @@
             }else {
                 // Save data into the database
                 $insert = mysqli_query($conn, "INSERT INTO day_14(fname, lname, email, file) VALUES ('$fname','$lname','$email','$perm_file')");
-                move_uploaded_file($tmp_file, "/Uploads/$perm_file");
+                move_uploaded_file($tmp_file, "Uploads/$perm_file");
                 echo "User created successfully";
             };
         };
