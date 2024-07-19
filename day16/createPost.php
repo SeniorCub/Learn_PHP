@@ -1,9 +1,6 @@
 <?php
     // Linking connect.php
-         include "connect.php";
-     // $conn = mysqli_connect("localhost","root", "","FirstWork");
-
-
+     include "connect.php";
 
     // To check if the submit button is clicked
     if (isset($_POST["submit"])) {
