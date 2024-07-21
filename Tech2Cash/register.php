@@ -19,6 +19,7 @@
                $insert = mysqli_query($conn, "INSERT INTO `tech2cash`(`fname`, `lname`, `image`, `email`) VALUES  ('$fname', '$lname','$perm_file','$email')");
                move_uploaded_file($tmp_file, "Uploads/$perm_file");
                echo "Post created successfully";
+               header("location: profile.php?lname=$lname&fname=$fname&image=$perm_file");
         };
     };
 
