@@ -7,7 +7,7 @@
      
      // Create connection
      $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
-     if ($conn) {
-          echo"Connected";
-     }
+     // if ($conn) {
+     //      echo"Connected";
+     // }
 ?>

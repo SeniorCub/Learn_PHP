@@ -8,10 +8,12 @@
           $lname = $_POST["lname"];
           $uname = $_POST["uname"];
           $email = $_POST["email"];
+          $perm_file = $_FILES["image"]["name"];
+          $tmp_file = $_FILES["image"]["tmp_name"];
           $password = $_POST["password"];
           $cpassword = $_POST["cpassword"];
 
-          if(empty($fname) && empty($lname) && empty($uname) && empty($email) && empty($password) && empty($cpassword)){
+          if(empty($fname) && empty($lname) && empty($uname) && empty($email)  && empty($perm_file) && empty($password) && empty($cpassword)){
                // Echo error if input is empty
                echo("All fields are required");
           } else {
@@ -19,7 +21,8 @@
                     echo("Password does not match");
                } else{
                     // save data into the database
-                    $insert = mysqli_query($conn, "INSERT INTO `Customer Details`(`fname`, `lname`, `uname`, `email`, `password`, `cpassword`) VALUES ('$fname','$lname','$uname','$email','$password','$cpassword')");
+                    $insert = mysqli_query($conn, "INSERT INTO `Customer Details`(`fname`, `lname`, `uname`, `email`, `image`, `password`, `cpassword`) VALUES ('$fname','$lname','$uname','$email', '$perm_file','$password','$cpassword')");
+                    move_uploaded_file($tmp_file, "Uploads/$perm_file");
                     // Echo success messgae
                     echo('User created Sucessfuly');
                }
@@ -77,6 +80,7 @@
           <input type="text" name="lname" id="" placeholder="Last Name">
           <input type="text" name="uname" id="" placeholder="Username">
           <input type="email" name="email" id="" placeholder="email">
+          <input type="file" name="image" id="image">
           <input type="password" name="password" id="" placeholder="Password">
           <input type="password" name="cpassword" id="" placeholder="Confirm Password">
           <button type="submit" class="btn" name="submit">Submit</button>
