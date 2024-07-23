@@ -37,7 +37,7 @@
                border: 2px solid black;
                padding: 1rem;
                .one{
-                    width: 80%;
+                    width: 90%;
                     height: 100%;
                     margin: auto;
                     img{
@@ -49,6 +49,7 @@
                .two{
                     border-left: 2px solid black;
                     padding: 1rem;
+                    background-color: blue;
                     .header{
                          padding: 1rem 0;
                          .onee{
