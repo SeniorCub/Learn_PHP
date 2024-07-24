@@ -82,6 +82,10 @@
                     }
                }
           }
+          .link{
+               text-align: center;
+               margin: 0 auto;
+          }
      </style>
 </head>
 <body>
@@ -111,5 +115,6 @@
           </div>
      </div>
 
+     <h1 class="link"><a href="edit.php">Edit</a></h1>
 </body>
 </html>
