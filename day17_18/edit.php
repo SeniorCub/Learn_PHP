@@ -18,10 +18,10 @@
                // Echo error if input is empty
                echo("All fields are required");
           } else {
-               $update = mysqli_query($conn, "UPDATE `customer details` SET `fname`='$fname',`lname`='$lname',`password`='$password')");
+               $update = mysqli_query($conn, "UPDATE `customer details` SET `fname`='$fname',`lname`='$lname',`password`='$password'");
                if ($update){
                     echo('User created Sucessfuly');
-                    // header("location: index.php");
+                    header("location: index.php");
                }
           }
      }
