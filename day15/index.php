@@ -2,6 +2,15 @@
      include "connect.php";
 
      $selectAll = mysqli_query($conn, "SELECT * FROM day_14");
+
+     if (isset($_GET['delete'])) {
+          $email = $_GET["delete"];
+
+          $delete = mysqli_query($conn, "DELETE FROM `day_14` WHERE `email` = '$email'");
+          if ($delete) {
+               header("location: index.php");
+          }
+     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +23,12 @@
      <table border="1">
           <thead>
                <tr>
-                    <th>S/N</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>email</th>
-                    <th>Dp</th>
+                    <th>S/N <span>&#128516</span></th>
+                    <th>First Name <span>&#128515</span></th>
+                    <th>Last Name <span>&#128517</span></th>
+                    <th>email <span>&#128513</span></th>
+                    <th>Dp <span>&#128512</span></th>
+                    <th> <span>&#128514</span></th>
                </tr>
           </thead>
           <?php
@@ -48,6 +58,9 @@
                     </td>
                     <td>
                          <img src="Uploads/<?php echo $details["file"]?>" width="50px" alt="...">
+                    </td>
+                    <td>
+                         <a href="index.php?delete=<?php echo $details["email"];?>"><button type="submit" name="delete">Delete User</button></a>
                     </td>
                </tr>
           </tbody>
