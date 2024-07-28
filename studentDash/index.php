@@ -1,7 +1,7 @@
 <?php
      include "connect.php";
 
-     $selectAll = mysqli_query($conn, "SELECT * FROM `tech2cash`");
+     $selectAll = mysqli_query($conn, "SELECT * FROM `studentdash`");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,112 +10,57 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
      <style>
-          *{
-               padding: 0;
-               margin: 0;
-               box-sizing: border-box;
-          }
-          .cards{
-               display: grid;
-               grid-template-columns: repeat(4, 1fr);
-               padding: 2rem;
-               gap: 2rem;
+          tr{
                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-               }
-               .card{
-                    padding: 1rem;
-                    position: relative;
-                    border-radius: 1rem;
-                    background-color: #786fab;
-                    .img{
-                         position: absolute;
-                         right: 1rem;
-                         width: 100px;
-                    }
-                    .head{
-                         font-size: 2rem;
-                         color: white;
-                         font-weight: 800;
-                         margin-top: 1rem;
-                    }
-                    .middle{
-                         border-radius: 1rem;
-                         position: relative;
-                         border: 1px solid black;
-                         overflow: hidden;
-                         height: 250px;
-                         .top{
-                              position: absolute;
-                              background-color: #999;
-                              right: 1px;
-                              font-size: 2rem;
-                              width: 90px;
-                              padding: 0.5rem;
-                              height: max-content;
-                              color: #fff;
-                         }
-                         .name{
-                              font-size: 2.5rem;
-                              color: white;
-                              font-weight: 800;
-                              position: absolute;
-                              left: 5px;
-                              bottom: 5px;
-                              text-shadow: -3px -1px 0px #e487bc;
-                              display: flex;
-                              flex-direction: column;
-                         }
-                    }
-                    .txet{
-                         margin-top: 30px;
-                         margin-bottom: 15px;
-                         color: #fff;
-                    }
-                    button{
-                         background-color: #e487bc;
-                         border-radius: 1rem;
-                         padding: 1rem;
-                         margin-top: 5px;
-                         border: none;
-                         outline: none;
-                         a{
-                              color: #fff;
-                              font-weight: 400;
-                              text-decoration: none;
-                              font-size: 1rem;
-                         }
-                    }
+                    width: 50px;
+                    height: 50px;
                }
           }
      </style>
 </head>
 <body>
+     <h1>All Students</h1>
 
-     <div class="cards">
+     <table border="1" >
+          <thead>
+               <tr>
+                    <th>Picture</th>
+                    <th>Full name</th>
+                    <th>Email</th>
+                    <th>Matric Number</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Level</th>
+                    <th>Department</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Country</th>
+               </tr>
+          </thead>
+          <tbody>
           <?php 
-               while($detail = mysqli_fetch_assoc($selectAll)){
+               while($details = mysqli_fetch_assoc($selectAll)){
           ?>
-          <div class="card">
-               <div class="img"><img src="Asset 121.png" alt="....."></div>
-               <h4 class="head">Tech2Cash</h4>
-               <div class="middle">
-                    <div class="top">I will be there</div>
-                    <img src="Uploads/<?php echo $detail["image"] ?>" alt=".....">
-                    <div class="name">
-                         <div class="lname"><?php echo $detail["lname"] ?></div>
-                         <div class="fname"><?php echo $detail["fname"] ?></div>
-                    </div>
-               </div>
-               <p class="txet">I just register for "Tech2Cash" event! see you there</p>
-               <button type="button" class="btn"><a href="www.buggybillions.com/tech2cash">www.buggybillions.com/tech2cash</a></button>
-          </div>
+          <tr>
+               <td class="dp">
+                    <img src="Uploads/<?php echo $details["image"] ?>" alt="profile picture">
+               </td>
+               <td class="name"><?php echo($details['fname'] . " " .  $details['lname']); ?></td>
+               <td class="email"><?php echo $details['email']; ?></td>
+               <td class="matricNo"><?php echo $details['marticNo']; ?></td>
+               <td class="age"><?php echo $details['age']; ?></td>
+               <td class="gender"><?php echo $details['gender']; ?></td>
+               <td class="level"><?php echo $details['level']; ?></td>
+               <td class="department"><?php echo $details['department']; ?></td>
+               <td class="city"><?php echo $details['city']; ?></td>
+               <td class="state"><?php echo $details['state']; ?></td>
+               <td class="country"><?php echo $details['country']; ?></td>
+          </tr>
           <?php
                }
           ?>
-     </div>
+          </tbody>
+     </table>
      
 </body>
 </html>
