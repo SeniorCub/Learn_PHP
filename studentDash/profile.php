@@ -34,51 +34,86 @@
           }
           .main{
                display: grid;
-               grid-template-columns: 1fr 4fr;
+               grid-template-columns: 1fr 5fr;
                height: 100%;
                .left{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     padding: 2rem;
+                    padding-top: 1rem;
+                    border-right: 3px solid #333;
                     background-color: antiquewhite;
-                    .dp{
-                         width: 100px;
-                         height: 100px;
-                         border-radius: 50%;
+                    .logo{
                          overflow: hidden;
+                         width: 150px;
+                         height: 50px;
                          img{
                               width: 100%;
                               height: 100%;
                               object-fit: cover;
                          }
                     }
-                    .details{
-                         margin-top: 20px;
+                    .links{
+                         margin-top: auto;
                          display: flex;
                          flex-direction: column;
                          gap: 1rem;
-                         align-items: center;
-                         .name{
-                              font-size: 1.5rem;
-                              font-weight: bold;
+                         justify-content: center;
+                         text-align: center;
+                         a{
+                             color: #333;
+                              padding: 0.5rem 2rem;
+                              text-decoration: none;
+                              position: relative;
                          }
-                         .email{
-                              font-size: 1rem;
-                              color: #777;
+                         
+                         .active, a:hover{
+                              background-color: #333;
+                              color: antiquewhite;
+                              ::after{
+                                   content: "Click Me";
+                                   position: absolute;
+                                   top: -20%;
+                                   right: -10%;
+                                   color: red;
+                              }
                          }
-                         .matricNo{
-                              font-size: 1rem;
-                              color: #777;
+                         a:hover{
+                              background-color: #333;
+                              color: antiquewhite;
+                              span::after{
+                                   content: "👍";
+                                   position: absolute;
+                                   top: -80%;
+                                   right: -10%;
+                                   color: red;
+                                   font-size: 2rem;
+                              }
+                         }
+                    }
+                    form{
+                         margin-top: auto;
+                         button{
+                              height: 35px;
+                              background-color: #f4f4f4;
+                              outline: none;
+                              padding: 0.5rem;
+                              border: none;
+                              cursor: pointer;
+                              box-shadow: 1px 1px 5px #333;
+                         }
+                         button:hover{
+                              background-color: #333;
+                              color: antiquewhite;
                          }
                     }
                }
                .right{
-                    display: grid;
-                    grid-template-rows: 1fr 1fr 1fr 1fr;
-                    gap: 1rem;
-                    padding: 2rem;
                     background-color: gray;
+                    .others{
+                         padding-top: 2rem;
+                    }
                     .someMore, .academics, .personal, .secret{
                          background-color: #f4f4f4;
                          box-shadow: 5px 5px 5px inset aliceblue;
@@ -96,87 +131,113 @@
                               font-weight: bold;
                          }
                     }
+                    .email{
+                         font-size: 1rem;
+                         color: #777;
+                    }
+                    .name{
+                         font-size: 1.5rem;
+                         font-weight: bold;
+                    }
+                    .matricNo{
+                         font-size: 1rem;
+                         color: #777;
+                    }
+                    .top{
+                         height: 15vh;
+                         background-color: #333;
+                         padding: 1rem;
+                         display: flex;
+                         flex-direction: row-reverse;
+                         gap: 1rem;
+                         border-bottom: 3px solid antiquewhite;
+                         justify-content: center;
+                         .dp{
+                              margin-top: 1rem;
+                              border: 3px solid antiquewhite;
+                              width: 150px;
+                              height: 150px;
+                              border-radius: 50%;
+                              overflow: hidden;
+                              img{
+                                   width: 100%;
+                                   height: 100%;
+                                   object-fit: cover;
+                              }
+                         }
+                    }
                }
           }
-          form{
-               margin-top: auto;
-               button{
-                    height: 35px;
-                    background-color: #f4f4f4;
-                    outline: none;
-                    padding: 0.5rem;
-                    border: none;
-                    box-shadow: 1px 1px 5px #333;
-               }
-          }
+          
      </style>
 </head>
 <body>
-     
-     <!-- Student Profile dashboard -->
 
      <div class="main">
           <div class="left">
-               <div class="dp">
-                    <img src="Uploads/<?php echo $details["image"] ?>" alt="profile picture">
-               </div>
-               <div class="details">
-                    <div class="name"><?php echo($details['fname'] . " " .  $details['lname']); ?></div>
-                    <div class="email"><?php echo $details['email']; ?></div>
-                    <div class="matricNo"><?php echo $details['marticNo']; ?></div>
-               </div>
+               <div class="logo"><img src="logo.png" alt="logo"></div>
                <div class="links">
-                    <div class="link">
-                         <a href="edit.php">Edit</a>
-                    </div>
+                    <a href="#" class="active">Dashboard</a>
+                    <a href=""><span>Edit</span></a>
                </div>
                <form action="" method="post">
                     <button type="submit" name="logout">-> Logout</button>
                </form>
           </div>
           <div class="right">
-               <div class="someMore">
-                    <div class="both">
-                         <div class="text">Age:</div>
-                         <div class="age"><?php echo $details['age']; ?></div>
-                    </div>
-                    <div class="both">
-                         <div class="text">Gender:</div>
-                         <div class="gender"><?php echo $details['gender']; ?></div>
+               <div class="top">
+                    <div class="dp">
+                         <img src="Uploads/<?php echo $details["image"] ?>" alt="profile picture">
                     </div>
                </div>
-               <div class="academics">
-                    <div class="both">
-                         <div class="text">Level:</div>
-                         <div class="level"><?php echo $details['level']; ?></div>
+               <div class="others">
+                         <div class="details">
+                              <div class="name"><?php echo($details['fname'] . " " .  $details['lname']); ?></div>
+                              <div class="email"><?php echo $details['email']; ?></div>
+                              <div class="matricNo"><?php echo $details['marticNo']; ?></div>
+                         </div>
+                    <div class="someMore">
+                         <div class="both">
+                              <div class="text">Age:</div>
+                              <div class="age"><?php echo $details['age']; ?></div>
+                         </div>
+                         <div class="both">
+                              <div class="text">Gender:</div>
+                              <div class="gender"><?php echo $details['gender']; ?></div>
+                         </div>
                     </div>
-                    <div class="both">
-                         <div class="text">Department:</div>
-                         <div class="department"><?php echo $details['department']; ?></div>
+                    <div class="academics">
+                         <div class="both">
+                              <div class="text">Level:</div>
+                              <div class="level"><?php echo $details['level']; ?></div>
+                         </div>
+                         <div class="both">
+                              <div class="text">Department:</div>
+                              <div class="department"><?php echo $details['department']; ?></div>
+                         </div>
                     </div>
-               </div>
-               <div class="personal">
-                    <div class="both">
-                         <div class="text">City: </div>
-                         <div class="city"><?php echo $details['city']; ?></div>
+                    <div class="personal">
+                         <div class="both">
+                              <div class="text">City: </div>
+                              <div class="city"><?php echo $details['city']; ?></div>
+                         </div>
+                         <div class="both">
+                              <div class="text">State:</div>
+                              <div class="state"><?php echo $details['state']; ?></div>
+                         </div>
+                         <div class="both">
+                              <div class="text">Country:</div>
+                              <div class="country"><?php echo $details['country']; ?></div>
+                         </div>
                     </div>
-                    <div class="both">
-                         <div class="text">State:</div>
-                         <div class="state"><?php echo $details['state']; ?></div>
-                    </div>
-                    <div class="both">
-                         <div class="text">Country:</div>
-                         <div class="country"><?php echo $details['country']; ?></div>
-                    </div>
-               </div>
-               <div class="secret">
-                    <div class="both">
-                         <div class="text">Password:</div>
-                         <div class="password"><?php echo $details['password']; ?></div>
+                    <div class="secret">
+                         <div class="both">
+                              <div class="text">Password:</div>
+                              <div class="password"><?php echo $details['password']; ?></div>
+                         </div>
                     </div>
                </div>
           </div>
      </div>
-
 </body>
 </html>
