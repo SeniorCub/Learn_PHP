@@ -125,6 +125,11 @@
                     <div class="email"><?php echo $details['email']; ?></div>
                     <div class="matricNo"><?php echo $details['marticNo']; ?></div>
                </div>
+               <div class="links">
+                    <div class="link">
+                         <a href="edit.php">Edit</a>
+                    </div>
+               </div>
                <form action="" method="post">
                     <button type="submit" name="logout">-> Logout</button>
                </form>
