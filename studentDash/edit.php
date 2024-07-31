@@ -170,6 +170,43 @@
      </style>
 </head>
 <body>
-     
+<div class="main">
+          <div class="left">
+               <div class="logo"><img src="logo.png" alt="logo"></div>
+               <div class="links">
+                    <a href="#">Dashboard</a>
+                    <a href="#" class="active">Profile</a>
+                    <a href="edit.php"><span>Edit</span></a>
+               </div>
+               <form action="" method="post">
+                    <button type="submit" name="logout">-> Logout</button>
+               </form>
+          </div>
+          <div class="right">
+               <div class="top">
+                    <div class="dp">
+                         <img src="Uploads/<?php echo $details["image"] ?>" alt="profile picture">
+                    </div>
+               </div>
+               <div class="others">
+                    <form action="" method="POST">
+                         <div class="both">
+                              <label for="fname">First Name</label>
+                              <input type="text" name="fname" id="" value="<?php echo($details['fname']); ?>" placeholder="First Name">
+                         </div>
+                         <div class="both">
+                              <label for="lname">Last Name</label>
+                              <input type="text" name="lname" id="" value="<?php echo($details['lname']); ?>" placeholder="Last Name">
+                         </div>
+                         <div class="both">
+                              <label for="lname">Email</label>
+                              <input type="email" name="email" id="" disabled value="<?php echo($details['email']); ?>" placeholder="email">
+                         </div>
+                         <input type="password" name="password" id="" value="" placeholder="Password">
+                         <button type="submit" class="btn" name="update">Update</button>
+                    </form>
+               </div>
+          </div>
+     </div>
 </body>
 </html>
