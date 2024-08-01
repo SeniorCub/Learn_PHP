@@ -83,12 +83,6 @@
                               background-color: antiquewhite;
                               color: #333;
                               box-shadow: 1px 1px 5px #f4f4f4;
-                              ::after{
-                                   content: "Click Me";
-                                   position: absolute;
-                                   top: -20%;
-                                   right: -10%;
-                              }
                          }
                          a:hover{
                               background-color: #333;
@@ -185,6 +179,16 @@
                               color: #333;
                          }
                     }
+                    button{
+                         width: 25%;
+                         margin: 0 auto;
+                         margin-top: auto;
+                         background: #000;
+                         color: #fff;
+                         height: 40px;
+                         border: none;
+                         border-radius: 5px;
+                    }
                     
                }
           }
@@ -196,9 +200,9 @@
           <div class="left">
                <div class="logo"><img src="logo.png" alt="logo"></div>
                <div class="links">
-                    <a href="#">Dashboard</a>
-                    <a href="#" class="active">Profile</a>
-                    <a href="edit.php"><span>Edit</span></a>
+                    <a href="#"><span>Dashboard</span></a>
+                    <a href="profile.php"><span>Profile</span></a>
+                    <a href=""  class="active"><span>Edit</span></a>
                </div>
                <form action="" method="post">
                     <button type="submit" name="logout">-> Logout</button>
@@ -229,6 +233,10 @@
                               <input type="password" name="password" id="" value="" placeholder="Password">
                          </div>
                          <button type="submit" class="btn" name="update">Update</button>
+                         <div class="both">
+                              <label for="lname">Level</label>
+                              <input type="level" name="level" id="" value="<?php echo($details['level']); ?>" placeholder="level">
+                         </div>
                     </form>
                </div>
           </div>

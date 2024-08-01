@@ -67,17 +67,10 @@
                               text-decoration: none;
                               position: relative;
                          }
-                         
                          .active, a:hover{
                               background-color: antiquewhite;
                               color: #333;
                               box-shadow: 1px 1px 5px #f4f4f4;
-                              ::after{
-                                   content: "Click Me";
-                                   position: absolute;
-                                   top: -20%;
-                                   right: -10%;
-                              }
                          }
                          a:hover{
                               background-color: #333;
@@ -191,8 +184,8 @@
           <div class="left">
                <div class="logo"><img src="logo.png" alt="logo"></div>
                <div class="links">
-                    <a href="#">Dashboard</a>
-                    <a href="#" class="active">Profile</a>
+                    <a href="#"><span>Dashboard</span></a>
+                    <a href="#" class="active"><span>Profile</span></a>
                     <a href="edit.php"><span>Edit</span></a>
                </div>
                <form action="" method="post">
