@@ -153,14 +153,36 @@
                               padding: 3rem;
                               display: grid;
                               grid-template-columns: repeat(3, 1fr);
+                              gap: 1rem;
                          }
                     }
                     .both{
                          display: flex;
                          flex-direction: column;
                          gap: 1rem;
+                         padding: 1rem;
                          .text{
                               font-weight: bold;
+                         }
+                         input:focus{
+                              height: 35px;
+                              background-color: #eee;
+                              outline: none;
+                              padding: 0.5rem;
+                              border: none;
+                              box-shadow: none;
+                         }
+                         input{
+                              height: 35px;
+                              background-color: transparent;
+                              border: none;
+                              border-bottom: 2px solid antiquewhite;
+                              outline: none;
+                              padding: 0.5rem;
+                              box-shadow: none;
+                         }
+                         input::placeholder{
+                              color: #333;
                          }
                     }
                     
@@ -202,7 +224,10 @@
                               <label for="lname">Email</label>
                               <input type="email" name="email" id="" disabled value="<?php echo($details['email']); ?>" placeholder="email">
                          </div>
-                         <input type="password" name="password" id="" value="" placeholder="Password">
+                         <div class="both">
+                              <label for="lname">Password</label>
+                              <input type="password" name="password" id="" value="" placeholder="Password">
+                         </div>
                          <button type="submit" class="btn" name="update">Update</button>
                     </form>
                </div>
