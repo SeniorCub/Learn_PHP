@@ -12,13 +12,21 @@
      if (isset($_POST["update"])){
           $fname = $_POST["fname"];
           $lname = $_POST["lname"];
+          $level = $_POST["level"];
+          $perm_file = $_FILES["image"]["name"];
+          $tmp_file = $_FILES["image"]["tmp_name"];
           $password = $_POST["password"];
 
           if(empty($fname) && empty($lname)){
                // Echo error if input is empty
                echo("All fields are required");
           } else {
-               $update = mysqli_query($conn, "UPDATE `studentdash` SET `fname`='$fname',`lname`='$lname'  WHERE `marticNo` = '$sessionMarticNo'");
+               if (empty($perm_file)) {
+                    $perm_file = $details["image"];
+               } 
+               $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+               $update = mysqli_query($conn, "UPDATE `studentdash` SET `fname`='$fname',`lname`='$lname',`image`='$perm_file',`level`='$level',`password`='$hashedPassword'  WHERE `marticNo` = '$sessionMarticNo'");
+               move_uploaded_file($tmp_file, "Uploads/$perm_file");
                if ($update){
                     echo('User created Sucessfuly');
                     header("location: profile.php");
@@ -143,7 +151,7 @@
                     }
                     .others{
                          padding-top: 5rem;
-                         form{
+                         .form{
                               padding: 3rem;
                               display: grid;
                               grid-template-columns: repeat(3, 1fr);
@@ -196,7 +204,7 @@
      </style>
 </head>
 <body>
-<div class="main">
+     <div class="main">
           <div class="left">
                <div class="logo"><img src="logo.png" alt="logo"></div>
                <div class="links">
@@ -209,36 +217,39 @@
                </form>
           </div>
           <div class="right">
-               <div class="top">
-                    <div class="dp">
-                         <img src="Uploads/<?php echo $details["image"] ?>" alt="profile picture">
+               <form action="" method="POST"  enctype="multipart/form-data">
+                    <div class="top">
+                         <div class="dp">
+                              <label for="image" id="imah"><img src="Uploads/<?php echo $details["image"] ?>" alt="profile picture"></label>
+                              <input type="file" name="image" id="image" style="display: none;">
+                         </div>
                     </div>
-               </div>
-               <div class="others">
-                    <form action="" method="POST">
-                         <div class="both">
-                              <label for="fname">First Name</label>
-                              <input type="text" name="fname" id="" value="<?php echo($details['fname']); ?>" placeholder="First Name">
+                    <div class="others">
+                         <div class="form">
+                              <div class="both">
+                                   <label for="fname">First Name</label>
+                                   <input type="text" name="fname" id="" value="<?php echo($details['fname']); ?>" placeholder="First Name">
+                              </div>
+                              <div class="both">
+                                   <label for="lname">Last Name</label>
+                                   <input type="text" name="lname" id="" value="<?php echo($details['lname']); ?>" placeholder="Last Name">
+                              </div>
+                              <div class="both">
+                                   <label for="lname">Email</label>
+                                   <input type="email" name="email" id="" disabled value="<?php echo($details['email']); ?>" placeholder="email">
+                              </div>
+                              <div class="both">
+                                   <label for="lname">Password</label>
+                                   <input type="password" name="password" id="" value="" placeholder="Password">
+                              </div>
+                              <button type="submit" class="btn" name="update">Update</button>
+                              <div class="both">
+                                   <label for="lname">Level</label>
+                                   <input type="level" name="level" id="" value="<?php echo($details['level']); ?>" placeholder="level">
+                              </div>
                          </div>
-                         <div class="both">
-                              <label for="lname">Last Name</label>
-                              <input type="text" name="lname" id="" value="<?php echo($details['lname']); ?>" placeholder="Last Name">
-                         </div>
-                         <div class="both">
-                              <label for="lname">Email</label>
-                              <input type="email" name="email" id="" disabled value="<?php echo($details['email']); ?>" placeholder="email">
-                         </div>
-                         <div class="both">
-                              <label for="lname">Password</label>
-                              <input type="password" name="password" id="" value="" placeholder="Password">
-                         </div>
-                         <button type="submit" class="btn" name="update">Update</button>
-                         <div class="both">
-                              <label for="lname">Level</label>
-                              <input type="level" name="level" id="" value="<?php echo($details['level']); ?>" placeholder="level">
-                         </div>
-                    </form>
-               </div>
+                    </div>
+               </form>
           </div>
      </div>
 </body>
