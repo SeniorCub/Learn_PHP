@@ -223,11 +223,14 @@ section{
 }
 .footer{
      height: max-content;
-     background: linear-gradient(255deg, #33333399, #00000099), url(images/hero2.avif);
      background-position: top;
      background-repeat: no-repeat;
+     background: linear-gradient(255deg, #33333399, #00000099), url(images/hero2.avif);
      background-size: cover;
-     padding: 2rem 0;
+     .foot{
+          padding: 2rem 0;
+          backdrop-filter: blur(5px);
+     }
      a, a:visited{
           color: var(--white)!important;
           font-weight: 800;
@@ -262,8 +265,9 @@ section{
                     font-size: 1.5rem;
                }
                .story{
-                    font-size: 0.7rem;
+                    font-size: 0.8rem;
                     color: var(--white);
+                    width: 80%;
                }
           }
           .sideTwo{
@@ -301,10 +305,10 @@ section{
           -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(5px);
           padding: 1rem;
-          border-radius: 10px;
-          margin: 0.2em;
+          border-radius: var(--radius);
+          margin: 0.5em;
           border: 1px solid rgba(255, 255, 255, 0.3);
-          background-color: #2f36450f;
+          background-color: #e6b9a633;
           backdrop-filter: blur(10px);
           i{
                font-size: 1.5rem;
@@ -405,6 +409,17 @@ section{
                     margin: 0;
                     margin-bottom: 1rem;
                }      
+          }
+     }
+     .footer{
+          .sideBot{
+               font-size: 0.5rem;
+          }
+          .sideTop{
+               display: flex!important;
+               flex-direction: column;
+               gap: 1rem;
+               padding: 0 2rem;
           }
      }
 }
