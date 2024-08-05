@@ -223,7 +223,7 @@ section{
 }
 .footer{
      height: max-content;
-     background: linear-gradient(255deg, #33333377, #00000077), url(images/hero2.avif);
+     background: linear-gradient(255deg, #33333399, #00000099), url(images/hero2.avif);
      background-position: top;
      background-repeat: no-repeat;
      background-size: cover;
@@ -298,14 +298,14 @@ section{
           display: flex;
           align-items: center;
           justify-content: center;
-          -webkit-backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(5px);
           padding: 1rem;
           border-radius: 10px;
           margin: 0.2em;
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
           border: 1px solid rgba(255, 255, 255, 0.3);
-          background: rgba(255, 255, 255, 0.2);
+          background-color: #2f36450f;
+          backdrop-filter: blur(10px);
           i{
                font-size: 1.5rem;
           }
