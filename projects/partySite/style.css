@@ -19,6 +19,10 @@ body{
      width: 100vw;
      overflow-x: hidden;
 }
+body.no-scroll {
+     overflow: hidden;
+ }
+ 
 ::-webkit-scrollbar{
      display: none;
 }
@@ -221,6 +225,162 @@ section{
           }
      }
 }
+.full-screen {
+     display: block;
+     width: 100vw;
+     overflow: hidden;
+}
+#intro {
+     display: flex;
+     flex-direction: column;
+     height: 80vh;
+     align-items: center;
+     justify-content: center;
+     background-repeat: no-repeat;
+     background: linear-gradient(255deg, #E6B9A666, #00000066), url(images/party/upcoming.avif);
+     background-size: cover;
+     background-position: center;
+     color: #E6B9A6;
+     h1{
+          font-size: 2rem;
+          font-weight: 800;
+     }
+     p{
+          font-size: 1rem;
+          margin-top: 1rem;
+          width: 80%;
+          color: #EEEDEB;
+          font-weight: 600;
+     }
+}
+#panels #panels-container {
+     height: 100vh;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+     padding: 0;
+     overflow: hidden;
+     display: flex;
+     width: 500%; /* Adjust according to the number of panels */
+     overflow-x: hidden;
+      
+      .panel {
+          flex: 0 0 100vw; /* Make each panel take up the full viewport width */
+      }
+      
+}
+#panels #panels-container .panel {
+     color: var(--color-just-black);
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+     display: flex;
+     text-align: left;
+     align-items: center;
+     justify-content: center; 
+     .containe{
+          width: 100%;
+          height: 100%;
+          padding: 2.5rem;
+          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.5);
+     }
+     h2{
+          font-size: 2.5rem;
+          font-weight: 800;
+          line-height: 1.5;
+          color: #2F3645;
+          font-style: oblique;
+          text-shadow: 2px 2px 5px #E6B9A6;
+     }
+}
+.panel:nth-child(1){
+     background: linear-gradient(255deg, #E6B9A666, #00000066), url(images/party/partyBg.jpg);
+     background-size: cover;
+     background-position: center;
+}
+.panel:nth-child(2){
+     background: linear-gradient(255deg, #E6B9A666, #00000066), url(images/party/partyBg2.jpg);
+     background-size: cover;
+     background-position: center;
+}
+.panel:nth-child(3){
+     background: linear-gradient(255deg, #E6B9A666, #00000066), url(images/party/partyBg3.jpg);
+     background-size: cover;
+     background-position: center;
+}
+.panel:nth-child(4){
+     background: linear-gradient(255deg, #E6B9A666, #00000066), url(images/party/partyBg4.jpg);
+     background-size: cover;
+     background-position: center;
+}
+.panel:nth-child(5){
+     background: linear-gradient(255deg, #E6B9A666, #00000066), url(images/party/partyBg5.jpg);
+     background-size: cover;
+     background-position: center;
+}
+#panels #panels-container .panel img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+}
+#panels #panels-container .panel .panels-navigation {
+     width: 100%;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: end;
+     -ms-flex-pack: end;
+     justify-content: flex-end;
+}
+#panels #panels-container .panel .anchor-panel, #panels #panels-container .panel .nav-panel {
+     text-transform: uppercase;
+     margin-right: 2rem;
+}
+#panels #panels-container .panels-navigation {
+     position: absolute;
+     width: 100%;
+     bottom: 2rem;
+     right: 2rem;
+}
+.description{
+     font-size: 1rem;
+     font-weight: 600;
+     line-height: 1.5;
+     color: #2F3645;
+     text-align: center;
+}
+.step-description{
+     font-size: 1.5rem;
+     font-weight: 600;
+     line-height: 1.5;
+     color: #2F3645;
+     .location, .date{
+          max-width: 250px;
+          text-wrap: wrap;
+          text-align: center;
+     }
+}
+a {
+     color: var(--color-just-black)
+}
+/* Ensure the panels container has a height that allows it to be scrolled */
+#panels {
+     position: relative;
+ }
+ 
+ /* Ensure other sections are displayed and can be scrolled */
+ #map {
+     height: 100vh; /* or whatever height you need */
+ }
+ 
+ .full-screen {
+     min-height: 100vh; /* Ensure full viewport height */
+ }
+ 
 .footer{
      height: max-content;
      background-position: top;
