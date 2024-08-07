@@ -41,7 +41,6 @@ if (isset($_POST['logout'])) {
             overflow: hidden;
         }
         .sidebar {
-          height: 100vh;
             background-color: #333;
             color: #fff;
             display: flex;
@@ -80,53 +79,71 @@ if (isset($_POST['logout'])) {
             background-color: #d32f2f;
         }
         .content {
-          height: 100vh;
-          overflow-y: auto;
             padding: 40px;
-        }
-        .profile-pic {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 40px;
+            justify-content: center;
         }
-        .profile-pic img {
-            width: 150px;
-            height: 150px;
+        .profile-summary {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-summary img {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #333;
+            margin-right: 20px;
         }
-        .details {
+        .profile-summary .info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .profile-summary .info span {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .nav-sections {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            width: 100%;
         }
-        .details div {
+        .nav-sections .section {
             background-color: #f4f4f4;
             padding: 20px;
             border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
-        .details div span {
-            font-weight: bold;
+        .nav-sections .section:hover {
+            background-color: #ddd;
         }
-        .details .section-title {
-            grid-column: span 2;
-            font-size: 1.5rem;
+        .nav-sections .section i {
+            font-size: 2rem;
             margin-bottom: 10px;
-            background-color: #575757;
-            color: #f4f4f4;
+            color: #333;
+        }
+        .nav-sections .section span {
+            font-weight: bold;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
     <div class="container">
-    <div class="sidebar">
+        <div class="sidebar">
             <div class="logo"><img src="logo.png" alt="logo"></div>
-            <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-            <a href="profile.php" class="active"><i class="fas fa-user"></i> Profile</a>
+            <a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
             <a href="edit.php"><i class="fas fa-edit"></i> Edit</a>
             <div class="logout">
                 <form action="" method="post">
@@ -135,44 +152,26 @@ if (isset($_POST['logout'])) {
             </div>
         </div>
         <div class="content">
-            <div class="profile-pic">
+            <div class="profile-summary">
                 <img src="Uploads/<?php echo $details['image']; ?>" alt="Profile Picture">
+                <div class="info">
+                    <span>Name: <?php echo $details['fname'] . ' ' . $details['lname']; ?></span>
+                    <span>Email: <?php echo $details['email']; ?></span>
+                    <span>Matric No: <?php echo $details['marticNo']; ?></span>
+                </div>
             </div>
-            <div class="details">
-                <div class="section-title">Personal Details</div>
-                <div>
-                    <span>Name:</span> <?php echo $details['fname'] . ' ' . $details['lname']; ?>
+            <div class="nav-sections">
+                <div class="section">
+                    <i class="fas fa-book"></i>
+                    <span>Courses</span>
                 </div>
-                <div>
-                    <span>Email:</span> <?php echo $details['email']; ?>
+                <div class="section">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Grades</span>
                 </div>
-                <div>
-                    <span>Matric No:</span> <?php echo $details['marticNo']; ?>
-                </div>
-                <div>
-                    <span>Age:</span> <?php echo $details['age']; ?>
-                </div>
-                <div>
-                    <span>Gender:</span> <?php echo $details['gender']; ?>
-                </div>
-                <div>
-                    <span>City:</span> <?php echo $details['city']; ?>
-                </div>
-                <div>
-                    <span>State:</span> <?php echo $details['state']; ?>
-                </div>
-                <div>
-                    <span>Country:</span> <?php echo $details['country']; ?>
-                </div>
-                <div>
-                    <span>Password:</span> <?php echo $details['password']; ?>
-                </div>
-                <div class="section-title">Academic Details</div>
-                <div>
-                    <span>Level:</span> <?php echo $details['level']; ?>
-                </div>
-                <div>
-                    <span>Department:</span> <?php echo $details['department']; ?>
+                <div class="section">
+                    <i class="fas fa-calendar"></i>
+                    <span>Schedule</span>
                 </div>
             </div>
         </div>

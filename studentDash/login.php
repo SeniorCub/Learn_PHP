@@ -27,7 +27,7 @@
                          $select = mysqli_query($conn, "SELECT * FROM `studentdash` WHERE `marticNo` = '$marticNo'");
                          $user = mysqli_fetch_assoc($select);
                          $_SESSION['marticNo'] = $user['marticNo'];
-                         header("location: profile.php");
+                         header("location: dashboard.php");
                     } else {
                         $condition = "Invalid password.";
                     }
