@@ -273,7 +273,7 @@
           
           <section id="map" class="full-screen"></section>
 
-          <section class="full-screen footer">
+          <section class="footer">
                <div class="foot">
                     <div class="sideTop">
                          <div class="sideOne">
@@ -390,7 +390,16 @@
                   }
               }
           });
-          
+  
+          // Reset ScrollTrigger after panels section
+          ScrollTrigger.create({
+              trigger: "#map", // First section after panels
+              start: "top top",
+              end: "bottom bottom",
+              pin: false,
+              pinSpacing: true,
+              scrub: false
+          });
      </script>
      
 </body>
