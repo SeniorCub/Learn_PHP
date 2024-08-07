@@ -361,7 +361,7 @@
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
      <script>
-          gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+          gsap.registerPlugin(ScrollTrigger);
 
           // Main navigation
           let panelsSection = document.querySelector("#panels"),
@@ -374,31 +374,34 @@
               xPercent: -100 * (panels.length - 1),
               ease: "none",
               scrollTrigger: {
-                  trigger: "#panels-container",
+                  trigger: "#panels",
                   pin: true,
-                  start: "top top",
                   scrub: 1,
                   snap: {
                       snapTo: 1 / (panels.length - 1),
-                      inertia: false,
-                      duration: { min: 0.1, max: 0.1 }
+                      duration: { min: 0.2, max: 0.3 },
+                      ease: "power1.inOut"
                   },
-                  end: () => {
-                      const containerWidth = panelsContainer.offsetWidth;
-                      const totalPanelsWidth = containerWidth * panels.length;
-                      return "+=" + totalPanelsWidth;
-                  }
+                  end: () => "+=" + panelsContainer.offsetWidth
               }
           });
   
-          // Reset ScrollTrigger after panels section
+          // Ensure the normal scrolling behavior after the panels
           ScrollTrigger.create({
-              trigger: "#map", // First section after panels
+              trigger: "#map",
               start: "top top",
               end: "bottom bottom",
               pin: false,
               pinSpacing: true,
               scrub: false
+          });
+  
+          // Handle panel navigation
+          document.querySelectorAll('.nav-panel a').forEach(anchor => {
+              anchor.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  gsap.to(window, {duration: 1, scrollTo: this.getAttribute('href')});
+              });
           });
      </script>
      
