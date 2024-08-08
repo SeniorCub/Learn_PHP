@@ -233,7 +233,7 @@ section{
 #intro {
      display: flex;
      flex-direction: column;
-     height: 80vh;
+     height: 70vh;
      align-items: center;
      justify-content: center;
      background-repeat: no-repeat;
@@ -371,16 +371,69 @@ a {
 #panels {
      position: relative;
  }
- 
- /* Ensure other sections are displayed and can be scrolled */
- #map {
-     height: 100vh; /* or whatever height you need */
- }
- 
  .full-screen {
-     min-height: 100vh; /* Ensure full viewport height */
+     max-height: 100vh; /* Ensure full viewport height */
  }
- 
+ .bg-dark{
+      background: linear-gradient(135deg, #2F3645, #C9ADA7, #9A8C98, #E6B9A6, #4A4E69)!important;
+ }
+ /* Gallery Section Styles */
+.gallery-section {
+     padding: 50px 20px;
+     color: #EEEDEB;
+     text-align: center;
+     height: 250vh;
+     background-repeat: no-repeat;
+     background: linear-gradient(255deg, #E6B9A666, #00000066), url(images/friends-taking-selfie-surprise-birthday-party_23-2149749123.avif);
+     background-size: cover;
+     background-position: top;
+     
+}
+.gallery-header{
+     width: 100%;
+     height: 60vh;
+     padding: 2.5rem;
+     backdrop-filter: blur(10px);
+     background: rgba(0, 0, 0, 0.1);
+     h1{
+          font-size: 2rem;
+          font-weight: 800;
+          span{
+               color: var(--gold);
+          }
+     }
+     p{
+          font-size: 1rem;
+          margin-top: 1rem;
+          width: 60%;
+          color: #EEEDEB;
+          line-height: 2rem;
+          font-weight: 600;
+     }
+}
+   /* Gallery Grid */
+   .gallery-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
+     margin-top: 20px;
+   }
+   
+   .gallery-item {
+     overflow: hidden;
+     border-radius: 10px;
+   }
+   
+   .gallery-item img {
+     width: 100%;
+     height: auto;
+     transition: transform 0.3s ease-in-out;
+   }
+   
+   .gallery-item img:hover {
+     transform: scale(1.1);
+   }
+   
 .footer{
      height: max-content;
      background-position: top;

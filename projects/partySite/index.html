@@ -9,7 +9,7 @@
      <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <main id="content">
+     <main id="content" class="bg-dark">
 
           <section class="hero">
                <nav class="navbar navbar-expand-lg">
@@ -271,7 +271,24 @@
                </div>
           </section>
           
-          <section id="map" class="full-screen"></section>
+          <section class="gallery-section">
+               <div class="d-flex flex-column justify-content-center align-items-center gallery-header">
+                    <h1 class="gallery-title"><span>Capture the Moments:</span> Party Gallery</h1>
+                    <p class="gallery-description">
+                    Relive the magic with our curated gallery of past events and parties. Each photo tells a story of unforgettable nights, vibrant vibes, and endless fun. Browse through the highlights and get inspired for the next big bash!
+                    </p>
+               </div>
+             
+               <div class="gallery-grid">
+                 <div class="gallery-item"><img src="image1.jpg" alt="Event 1"></div>
+                 <div class="gallery-item"><img src="image2.jpg" alt="Event 2"></div>
+                 <div class="gallery-item"><img src="image3.jpg" alt="Event 3"></div>
+                 <div class="gallery-item"><img src="image4.jpg" alt="Event 4"></div>
+                 <div class="gallery-item"><img src="image5.jpg" alt="Event 5"></div>
+                 <div class="gallery-item"><img src="image6.jpg" alt="Event 6"></div>
+               </div>
+          </section>
+             
 
           <section class="footer">
                <div class="foot">
@@ -348,18 +365,18 @@
      <script src="https://kit.fontawesome.com/2a49fbdbb8.js" crossorigin="anonymous"></script>
      <script src="script.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+     <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script> -->
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+     <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EaselPlugin.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/PixiPlugin.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
-     <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script> -->
+     <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file    
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script> -->
      <script>
           gsap.registerPlugin(ScrollTrigger);
 
