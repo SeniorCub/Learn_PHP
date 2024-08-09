@@ -20,7 +20,7 @@
                                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                                    </li>
                                    <li class="nav-item">
-                                        <a class="nav-link" href="services.html">Events</a>
+                                        <a class="nav-link" href="events.html">Events</a>
                                    </li>
                               </ul>
                          </div>
@@ -32,10 +32,10 @@
                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
                               <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                                    <li class="nav-item">
-                                        <a class="nav-link" href="/">Gallery</a>
+                                        <a class="nav-link" href="gallery.html">Gallery</a>
                                    </li>
                                    <li class="nav-item">
-                                        <a class="nav-link" href="services.html">Calendar</a>
+                                        <a class="nav-link" href="calender.html">Calendar</a>
                                    </li>
                               </ul>
                          </div>
@@ -55,13 +55,13 @@
                                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                                    </li>
                                    <li class="nav-item">
-                                        <a class="nav-link" href="services.html">Events</a>
+                                        <a class="nav-link" href="events.html">Events</a>
                                    </li>
                                    <li class="nav-item">
-                                        <a class="nav-link" href="/">Gallery</a>
+                                        <a class="nav-link" href="gallery.html">Gallery</a>
                                    </li>
                                    <li class="nav-item">
-                                        <a class="nav-link" href="services.html">Calendar</a>
+                                        <a class="nav-link" href="calender.html">Calendar</a>
                                    </li>
                               </ul>
                          </div>
@@ -425,6 +425,25 @@
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script> -->
      <script>
+          let main1 = document.querySelector('.main1');
+          let main2 = document.querySelector('.main2');
+
+          let select1 = document.querySelector('#select1');
+          let select2 = document.querySelector('#select2');
+          document.addEventListener('DOMContentLoaded',()=>{
+               main1.classList.remove('d-none');
+          })
+          select1.addEventListener('click',()=>{
+               main1.classList.remove('d-none');
+               main2.classList.add('d-none');
+               select1.attributes.add('checked')
+          })
+          select2.addEventListener('click',()=>{
+               main2.classList.remove('d-none');
+               main1.classList.add('d-none');
+               select2.attributes.add('checked')
+          })
+
           gsap.registerPlugin(ScrollTrigger, Flip, Draggable);
 
           // Main navigation
