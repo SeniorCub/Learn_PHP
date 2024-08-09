@@ -422,6 +422,87 @@ a {
    .gallery-item {
      overflow: hidden;
      border-radius: 10px;
+     .container {
+          position: fixed;
+          top: 15px;
+          left: 15px;
+          right: 15px;
+          bottom: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          pointer-events: none;
+        }
+        .full-size {
+          flex-shrink: 0;
+          flex-grow: 0;
+          height: 100%;
+          display: none;
+        }
+        .tumb{
+          position: relative;
+        }
+        .hover{
+          display: none;
+        }
+       .tumb:hover .hover{
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          gap: 3rem;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, #2F364533, #C9ADA733, #9a8c98b3, #E6B9A633, #4A4E6933)!important;
+          backdrop-filter: blur(5px);
+          left: 0;
+          top: 0;
+          h2{
+               font-size: 2.5rem;
+               font-weight: 600;
+               line-height: 1.5;
+               color: var(--white);
+               text-align: center;  
+          }
+          .location, .date{
+               font-size: 1rem;
+               width: 100%;
+               font-weight: 600;
+               line-height: 1.5;
+               color: #2F3645;
+               text-align: center;  
+          }
+          button{
+               padding: 0.7rem 2rem;
+               border: 3px solid var(--black);
+               border-radius: var(--radius);
+               background: transparent;
+               display: flex;
+               width: max-content;
+               margin: 0 auto;
+               justify-content: center;
+               align-items: center;
+               color: var(--black);
+               text-transform: uppercase;
+               word-spacing: 0.3rem;
+               font-size: 1rem;
+               font-weight: 700;
+          }
+          button:hover{
+               background: linear-gradient(135deg, #2F364533, #C9ADA733, #9a8c9833, #E6B9A633, #4A4E6933)!important;
+          backdrop-filter: blur(5px);
+          }
+        }
+        .full-size.active {
+          display: block;
+        }
+        .thumbnail.active {
+          visibility: hidden;
+        }
+        .thumbnail, .thumbnail.flipping {
+          visibility: visible;
+        }
    }
    
    .gallery-item img {
